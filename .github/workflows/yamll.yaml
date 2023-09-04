@@ -27,4 +27,4 @@ jobs:
         with:
           context: Training/Dockerfile
           push: true
-          tags: test1:latest
+          tags: ghcr.io/test1:latest
