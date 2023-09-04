@@ -23,7 +23,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Gnerate image path
-        run: echo "Shamani"
+        run: echo ${{ github.actor }}
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
