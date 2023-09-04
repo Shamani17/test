@@ -16,4 +16,6 @@ jobs:
       - run: env
         name: checking env
       - run: ls -l
+      - run: echo "Shamani is great"
+        name: printing something
 
