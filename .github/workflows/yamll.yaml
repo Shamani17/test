@@ -25,6 +25,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: Training/Dockerfile
+          context: /home/runner/work/test/test/Training/Dockerfile
           push: true
           tags: ghcr.io/shamani17/test1:latest
