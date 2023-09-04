@@ -12,10 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checking out the code
-        uses: actions/checkout@v2
-      - run: env
-        name: checking env
+        uses: actions/checkout@v3.6.0
+      - name: checking env
+        run: env
       - run: ls -l
-      - run: echo "Shamani is great"
-        name: printing something
-
+      - name: Login to GitHub registry
+        uses: docker/login-action@v2
+        with: 
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: Training\Dockerfile
+          push: true
+          tags: test1:latest
