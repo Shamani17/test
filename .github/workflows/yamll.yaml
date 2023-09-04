@@ -27,4 +27,4 @@ jobs:
         with:
           context: Training/Dockerfile
           push: true
-          tags: ghcr.io/Shamani17/test1:latest
+          tags: ghcr.io/shamani17/test1:latest
