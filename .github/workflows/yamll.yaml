@@ -22,11 +22,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Gnerate image path
+      - name: Generate image path
         run: |
           echo "Shamani"
           echo "Mohanty"
-          ls -l
+          echo "ghcr.io/${{github.repository}}:${GITHUB_SHA:0:7}"
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
