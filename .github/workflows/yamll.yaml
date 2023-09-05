@@ -24,8 +24,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate image path
         run: |
-          echo "ghcr.io/${{github.repository}}:${GITHUB_SHA:0:7}"
-          echo "ghcr.io/${{github.repository}}:${GITHUB_SHA:0:7}">>$GITHUB_ENV
+          echo "ghcr.io/shamani17/test:${GITHUB_SHA:0:7}"
+          echo "ghcr.io/shamani17/test:${GITHUB_SHA:0:7}">>$GITHUB_ENV
       - name: Print env again
         run: env
       - name: Build and push
