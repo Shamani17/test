@@ -24,12 +24,13 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate image path
         run: |
-          echo "Shamani"
-          echo "Mohanty"
           echo "ghcr.io/${{github.repository}}:${GITHUB_SHA:0:7}"
+          echo "ghcr.io/${{github.repository}}:${GITHUB_SHA:0:7}">>$GITHUB_ENV
+      - name: Print env again
+        run: env
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           context: Training/Docker1
           push: true
-          tags: ghcr.io/shamani17/test1:latest
+          tags: ${{env.imagename}}
