@@ -2,6 +2,10 @@ name: Docker-build
 on: 
   push:
     branches: [main]
+  workflow dispatch:
+    inputs:
+      messages:
+        description: 'Wanna say something?'
 permissions:
   contents: read
   packages: write
