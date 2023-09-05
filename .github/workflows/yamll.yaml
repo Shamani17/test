@@ -4,6 +4,15 @@ on:
     branches: [main]
   workflow_dispatch:
     inputs:
+    repo_name:
+      required: true
+      type: choice
+      default: shamani
+      options:
+      - shamani
+      - santoshi
+      - vishant
+      - vinod
       messages:
         description: 'Wanna say something?'
 permissions:
