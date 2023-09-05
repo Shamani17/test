@@ -2,7 +2,7 @@ name: Docker-build
 on: 
   push:
     branches: [main]
-  workflow dispatch:
+  workflow_dispatch:
     inputs:
       messages:
         description: 'Wanna say something?'
