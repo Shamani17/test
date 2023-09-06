@@ -23,6 +23,7 @@ jobs:
   Docker-build:
     name: Building Docker Images
     runs-on: ubuntu-latest
+    needs: [Security_scan,Code_ql,CDT,Sonar_qube]
     steps:
       - name: checking out the code
         uses: actions/checkout@v3.6.0
