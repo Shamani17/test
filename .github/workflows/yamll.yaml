@@ -35,15 +35,51 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Generate image path
-        run: |
-          echo "imagename=ghcr.io/shamani17/test:${GITHUB_SHA:0:7}"
-          echo "imagename=ghcr.io/shamani17/test:${GITHUB_SHA:0:7}">>$GITHUB_ENV
-      - name: Print env again
+      # - name: Generate image path
+      #   run: |
+      #     echo "imagename=ghcr.io/shamani17/test:${GITHUB_SHA:0:7}"
+      #     echo "imagename=ghcr.io/shamani17/test:${GITHUB_SHA:0:7}">>$GITHUB_ENV
+      # - name: Print env again
+      #   run: env
+      # - name: Build and push
+      #   uses: docker/build-push-action@v3
+      #   with:
+      #     context: Training/Docker1
+      #     push: true
+      #     tags: ${{env.imagename}}
+  Security_scan:
+    name: checking env
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking env
         run: env
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: Training/Docker1
-          push: true
-          tags: ${{env.imagename}}
+      - name: printing
+        run: echo "checking env"
+      - run: exit 0
+  Code_ql:
+    name: checking env
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking env
+        run: env
+      - name: printing
+        run: echo "code ql"
+      - run: exit 0
+  Sonar_qube:
+    name: checking env
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking env
+        run: env
+      - name: printing
+        run: echo "sonar qube"
+      - run: exit 0
+  CDT:
+    name: checking env
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking env
+        run: env
+      - name: printing
+        run: echo "CDT"
+      - run: exit 0
