@@ -20,10 +20,10 @@ permissions:
   packages: write
   issues: write
 jobs:
-  Docker-build:
+  Docker_build:
     name: Building Docker Images
     runs-on: ubuntu-latest
-    needs: [Security_scan]
+    needs: [Security_scan,Code_ql,Sonar_qube]
     steps:
       - name: checking out the code
         uses: actions/checkout@v3.6.0
@@ -80,10 +80,30 @@ jobs:
   CDT:
     name: CDT
     runs-on: ubuntu-latest
-    needs: [Code_ql]
+    needs: [Docker_build]
     steps:
       - name: checking env
         run: env
       - name: printing
         run: echo "CDT"
+      - run: exit 0
+  Stage:
+    name: Stage
+    runs-on: ubuntu-latest
+    needs: [CDT]
+    steps:
+      - name: checking env
+        run: env
+      - name: printing
+        run: echo "Stage"
+      - run: exit 0
+  Prod:
+    name: Prod
+    runs-on: ubuntu-latest
+    needs: [Stage]
+    steps:
+      - name: checking env
+        run: env
+      - name: printing
+        run: echo "Prod"
       - run: exit 0
