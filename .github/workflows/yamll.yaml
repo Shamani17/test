@@ -80,7 +80,7 @@ jobs:
   CDT:
     name: CDT
     runs-on: ubuntu-latest
-    needs: [Code_ql,Security_scan]
+    needs: [Code_ql]
     steps:
       - name: checking env
         run: env
