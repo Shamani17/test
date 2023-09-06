@@ -48,7 +48,7 @@ jobs:
       #     push: true
       #     tags: ${{env.imagename}}
   Security_scan:
-    name: checking env
+    name: Security Scan
     runs-on: ubuntu-latest
     steps:
       - name: checking env
@@ -57,7 +57,7 @@ jobs:
         run: echo "checking env"
       - run: exit 0
   Code_ql:
-    name: checking env
+    name: Code ql
     runs-on: ubuntu-latest
     steps:
       - name: checking env
@@ -66,7 +66,7 @@ jobs:
         run: echo "code ql"
       - run: exit 0
   Sonar_qube:
-    name: checking env
+    name: Sonar qube
     runs-on: ubuntu-latest
     steps:
       - name: checking env
@@ -75,7 +75,7 @@ jobs:
         run: echo "sonar qube"
       - run: exit 0
   CDT:
-    name: checking env
+    name: CDT
     runs-on: ubuntu-latest
     steps:
       - name: checking env
