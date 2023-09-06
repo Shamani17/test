@@ -51,7 +51,6 @@ jobs:
   Security_scan:
     name: Security Scan
     runs-on: ubuntu-latest
-    needs: [CDT]
     steps:
       - name: checking env
         run: env
@@ -70,7 +69,6 @@ jobs:
   Sonar_qube:
     name: Sonar qube
     runs-on: ubuntu-latest
-    needs: [CDT]
     steps:
       - name: checking env
         run: env
